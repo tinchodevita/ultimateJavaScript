@@ -12,21 +12,21 @@ function Carta(nombre, puntosDeVida, tipo, ataque, debilidad) {
         }
 
         let ataque = this.ataque[ataqueNumero];
-        if (ataque.energiaNecesaria > this.energia) {
-            console.log('Lo sentimos, no posee energía para atacar.')
+        if (ataque.energiaRequerida > this.energia) {
+            console.log(`Lo sentimos ${this.nombre}, no posee energía para atacar.`)
         } else {
-            console.log(`${this.nombre} está atacando con ${this.ataque[ataqueNumero]}`)
-            cartaObjetivo.recibirAtaque();
-            this.energia -= ataque.energiaNecesaria
+            console.log(`${this.nombre} está atacando con ${ataque.nombre} causando ${ataque.puntosDeDanio} de daño.`)
+            cartaObjetivo.recibirAtaque(ataque.puntosDeDanio);
+            this.energia -= ataque.energiaRequerida;
         }
     }
 
-    this.recibirAtaque = function(puntosAtaque) {
+    this.recibirAtaque = function(puntosDeDanio) {
         if (this.puntosDeVida <= 0){
             return console.log('La carta atacada ya no posee puntos de vida, no se puede realizar el ataque.')
         } else {
-            this.puntosDeVida -= puntosAtaque;
-            console.log(`${this.nombre} ha recibido ${puntosAtaque} de daño. Vida restante: ${this.puntosDeVida}`);
+            this.puntosDeVida -= puntosDeDanio;
+            console.log(`${this.nombre} ha recibido ${puntosDeDanio} de daño. Vida restante: ${this.puntosDeVida}.`);
         };
 
         if (this.puntosDeVida <= 0) {
@@ -36,7 +36,7 @@ function Carta(nombre, puntosDeVida, tipo, ataque, debilidad) {
 
     this.recibirEnergia = function(energiaRecibida) {
         this.energia += energiaRecibida;
-        console.log(`${this.nombre} ha recibido ${energiaRecibida} putos de energía.`);
+        console.log(`${this.nombre} ha recibido ${energiaRecibida} putos de energía. Energía actual: ${this.energia}`);
     };
 }
 
@@ -57,12 +57,17 @@ const carta2 = new Carta('Serpiente Acuática', 120, 'Agua',
 
 carta1.recibirEnergia(2);
 carta1.atacar(carta2, 0);
+console.log('\n');
 carta2.recibirEnergia(3);
 carta2.atacar(carta1, 0);
+console.log('\n');
 carta1.atacar(carta2, 1);
+console.log('\n');
 carta1.recibirEnergia(3);
 carta1.atacar(carta2, 1);
+console.log('\n');
 carta1.recibirEnergia(3);
 carta1.atacar(carta2, 1);
+console.log('\n');
 carta1.recibirEnergia(2);
 carta1.atacar(carta2, 0);
