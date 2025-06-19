@@ -1,3 +1,5 @@
+//map sirve para crear un nuevo array aplicándole una funcion a cada uno de los elementos del array original
+
 const usuarios = [
     {edad: 17, nombre: "Nico"},
     {edad: 13, nombre: "Martin"},
