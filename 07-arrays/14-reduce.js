@@ -14,16 +14,16 @@ const numeros = [1, 2, 3, 4];
 // console.log(plano);
 
 //buscar en arrays muy extremandamente grandes
-const usuarios = [
-    {edad: 17, nombre: "Nico"},
-    {edad: 13, nombre: "Martin"},
-    {edad: 18, nombre: "Felipe"},
-    {edad: 19, nombre: "Matias"},
-];
+// const usuarios = [
+//     {edad: 17, nombre: "Nico"},
+//     {edad: 13, nombre: "Martin"},
+//     {edad: 18, nombre: "Felipe"},
+//     {edad: 19, nombre: "Matias"},
+// ];
 
-const  indexado = usuarios.reduce((acumulador, elemento) => ({
-    ...acumulador,
-    [elemento.nombre]: elemento,
-}), {})
+// const  indexado = usuarios.reduce((acumulador, elemento) => ({
+//     ...acumulador,
+//     [elemento.nombre]: elemento,
+// }), {})
 
 console.log(indexado)
