@@ -1,5 +1,7 @@
 const numeros = [1, 2, 3, 4];
 
+//reduce se usa principalmente para convertir un array en un unico valor o para agrupar de cierta forma valores de un array
+
 // const suma = numeros.reduce((acc, el) => {
 //     return acc + el;
 // }, 0);
