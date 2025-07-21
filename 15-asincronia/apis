@@ -1,0 +1,4 @@
+4 acciones: listar --> GET n/ruta/1
+            crear --> POST n/ruta
+            actualizar  --> PUT/PATCH /ruta/1 {}
+            eliminar --> DELETE /todos/1
